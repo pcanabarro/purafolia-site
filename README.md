@@ -14,9 +14,8 @@ Tecnologias utilizadas:
 HTML5, CSS3 e JavaScript para a criação do front-end.
 Node.js e Express.js para a criação do back-end.
 MongoDB para o banco de dados.
-Funcionalidades do site:
 
-O site terá as seguintes funcionalidades:
+Funcionalidades do site:
 
 Página inicial com informações gerais sobre o salão de festas e seus serviços.
 Página com informações sobre os diferentes tipos de eventos que o salão de festas pode acomodar.
