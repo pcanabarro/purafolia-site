@@ -19,6 +19,5 @@ Funcionalidades do site:
 
 Página inicial com informações gerais sobre o salão de festas e seus serviços.
 Página com informações sobre os diferentes tipos de eventos que o salão de festas pode acomodar.
-Página com informações sobre os preços e pacotes oferecidos pelo salão de festas.
 Página com fotos e descrições dos espaços disponíveis para eventos.
 Página com informações de contato para a comunicação com o salão de festas.
