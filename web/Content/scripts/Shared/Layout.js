@@ -1,6 +1,6 @@
-carregarLayout();
+loadLayout();
 
-function carregarLayout() {
+function loadLayout() {
     var wrapper = document.createElement('div');
     wrapper.innerHTML = '<div></div>';
 
