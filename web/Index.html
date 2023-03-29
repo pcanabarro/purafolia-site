@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<script src="Content/scripts/Shared/Layout.js"></script>
 
-    <body>
-        
-    </body>
-</html>
-
-<script>
-    fetch("Views/Shared/Layout.html")
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector("head").insertAdjacentHTML("afterbegin", data);
-        });
-</script>
+<div id="conteudo">
+    <h1>Olá, mundo!</h1>
+    <p>Este é o conteúdo da minha página.</p>
+</div>
