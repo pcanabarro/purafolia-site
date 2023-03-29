@@ -1,5 +1,3 @@
-loadLayout();
-
 function loadLayout() {
     var wrapper = document.createElement('div');
     wrapper.innerHTML = '<div></div>';
@@ -30,3 +28,24 @@ function loadLayout() {
     };
     xhr.send();
 };
+
+function loadHeader(condition) {
+    if(condition) {
+        fetch('Views/Shared/Header.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const html = parser.parseFromString(data, 'text/html');
+                const conteudo = html.querySelector('#contentHeader');
+                const headerContent = document.querySelector('header');
+                headerContent.appendChild(conteudo);
+
+                const styles = html.querySelectorAll('link[rel="stylesheet"]');
+                styles.forEach(style => {
+                const header = document.querySelector('head');
+                header.appendChild(style.cloneNode(true));
+                });
+            }
+        );
+    }
+}
