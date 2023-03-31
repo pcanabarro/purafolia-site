@@ -1,6 +1,7 @@
 const express = require('express');
-const homeController = require('../controller/homeController.js')
-const orderController = require('../controller/orderController.js')
+const ContactController = require('../controller/contactController.js');
+const homeController = require('../controller/homeController.js');
+const orderController = require('../controller/orderController.js');
 
 class Router {
     static getRouter () {
@@ -11,10 +12,10 @@ class Router {
         router.get('/home', homeController.getHome);
         router.get('/order', orderController.getOrder);
         router.post('/order', orderController.createOrder);
-        router.get('/contact')
+        router.get('/contact', ContactController.getContact);
 
-        return router
+        return router;
     }
 }
 
-module.exports = Router
+module.exports = Router;
