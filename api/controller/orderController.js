@@ -1,37 +1,44 @@
 const database = require('../connections/database.js')
 
 class OrderController {
-  constructor() {
-    this.db = database.db('purafolia');
-    this.ordersCollection = this.db.collection('order');
-  }
 
   static async createOrder(req, res) {
-    console.log(req.body)
-    const { customerName, customerEmail, message } = req.body
+    console.log(req)
+    const { customerName, customerEmail, message } = req.query
     const newOrder = {
-      customerName: customerName,
-      customerEmail: customerEmail,
-      message: message
+      'customerName': customerName,
+      'customerEmail': customerEmail,
+      'message': message
     }
 
     try {
-      await this.ordersCollection.insertOne(newOrder)
-      res.status(201).json(newOrder)
+      await database.connect()
+      await database.order.insertOne(newOrder)
+      console.log('Data Inserted')
+      res.status(201).json({ data: 'Order created', newOrder })
     } catch (err) {
-      res.status(500).json({ data: 'Something went wrong', err: err})
+      res.status(500).json({ data: 'Something went wrong', err })
     }
   }
 
   static async getOrder(req, res) {
-    //  add method to get from database
-    res.status(200).json({ "orders": orders });
+    const ordersToDisplay = []
+    try {
+      await database.connect()
+      const allOrders = await database.order.find().toArray()
+      allOrders.forEach(item => {
+        ordersToDisplay.push(item)
+      })
+      res.status(201).json({ data: ordersToDisplay })
+    } catch (err) {
+      res.status(500).json({ data: 'Something went wrong', err })
+    }
   }
 
   static async deleteOrder(req, res) {
     // add method to delete from database
     const { orderId } = req.body
-    res.status(200).json({ msg: `Order ${orderId} deleted` }) //adicionar id
+    res.status(200).json({ msg: `Order ${orderId} deleted` })
   }
 }
 

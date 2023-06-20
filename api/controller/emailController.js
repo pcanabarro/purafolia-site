@@ -8,14 +8,13 @@ class EmailController {
 
   static async sendEmail(req, res) {
     try {
-      const { email, subject, content } = req.body
+      const { customerName, customerEmail, message } = req.query
       const mailOptions = {
         from: process.env.SERVER_EMAIL,
-        to: email,
-        subject: subject,
-        text: content,
+        to: process.env.SERVER_EMAIL,
+        subject: `Orçamento ${customerName}, ${customerEmail}`,
+        text: message
       }
-      console.log(email, subject, content, mailOptions)
 
       await transporter.sendMail(mailOptions)
       res.status(200).json({ message: 'Email enviado com sucesso!' })
