@@ -5,21 +5,18 @@ const header = document.querySelector('#header');
 const backToTopButton = document.querySelector('.back-to-top');
 const sections = document.querySelectorAll('main section[id]');
 
-// Abre e fecha o menu quando clicar no ícone
 toggle.forEach((element) => {
   element.addEventListener('click', () => {
     nav.classList.toggle('show');
   });
 });
 
-// Esconder o menu quando clicar em um item
 links.forEach((link) => {
   link.addEventListener('click', () => {
     nav.classList.remove('show');
   });
 });
 
-// Mudar o header da página quando der scroll
 const navHeight = header.offsetHeight;
 
 function changeHeaderWhenScroll() {
@@ -45,7 +42,6 @@ const swiper = new Swiper('.swiper-container', {
   }
 });
 
-// ScrollReveal: Mostrar elementos quando der scroll na página
 const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '30px',
@@ -62,7 +58,6 @@ scrollReveal.reveal(
   { interval: 100 }
 );
 
-// Button back to top
 function backToTop() {
   if (window.scrollY >= 560) {
     backToTopButton.classList.add('show');
@@ -71,7 +66,6 @@ function backToTop() {
   }
 }
 
-// Menu ativo conforme a seção visível na página
 function activeMenuAtCurrentSection() {
   const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
 
@@ -89,7 +83,6 @@ function activeMenuAtCurrentSection() {
   });
 }
 
-// Event Listeners
 window.addEventListener('scroll', () => {
   changeHeaderWhenScroll();
   backToTop();

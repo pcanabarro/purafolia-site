@@ -11,9 +11,9 @@
 
     // formatter
     "prettier.tabWidth": 2,
-    "prettier.semi": false, 
+    "prettier.semi": false,
     "prettier.singleQuote": true,
-    "prettier.trailingComma": "none", 
+    "prettier.trailingComma": "none",
     "prettier.arrowParens": "avoid",
     "prettier.endOfLine": "auto",
     "editor.tabSize": 2,
@@ -25,5 +25,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotVerifyTags": true
 }

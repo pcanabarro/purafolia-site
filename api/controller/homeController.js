@@ -1,6 +1,6 @@
 class HomeController {
     static getHome (req, res) {
-        res.status(200).send('Hello World');
+        res.render('index.pug')
     }
 }
 
