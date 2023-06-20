@@ -10,6 +10,7 @@ const PORT = process.env.SERVER_PORT
 app.set("view engine", "pug")
 app.set("views", path.join(__dirname, "web"))
 
+app.use(express.static(path.join(__dirname, 'web/public')));
 app.use(Router.getRouter())
 
 app.listen(PORT, () =>
