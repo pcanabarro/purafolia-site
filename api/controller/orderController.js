@@ -6,13 +6,13 @@ class OrderController {
     this.ordersCollection = this.db.collection('order');
   }
 
-  async createOrder(req, res) {
+  static async createOrder(req, res) {
     console.log(req.body)
-    const { customer, type, details } = req.body
+    const { customerName, customerEmail, message } = req.body
     const newOrder = {
-      customer: customer,
-      type: type,
-      details: details
+      customerName: customerName,
+      customerEmail: customerEmail,
+      message: message
     }
 
     try {
@@ -23,12 +23,12 @@ class OrderController {
     }
   }
 
-  static getOrder(req, res) {
+  static async getOrder(req, res) {
     //  add method to get from database
     res.status(200).json({ "orders": orders });
   }
 
-  static deleteOrder(req, res) {
+  static async deleteOrder(req, res) {
     // add method to delete from database
     const { orderId } = req.body
     res.status(200).json({ msg: `Order ${orderId} deleted` }) //adicionar id

@@ -11,10 +11,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="assests/style.css">
+    <link rel="stylesheet" href="assets/style.css">
 
     <!-- Icones -->
-    <link rel="stylesheet" href="assests/style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header id="header">
@@ -33,12 +33,12 @@
         </nav>
     </header>
 
-    <main> 
+    <main>
         <!-- Home -->
         <section class="section" id="home">
             <div class="container grid">
                 <div class="image">
-                    <img src="jpg/Salao.jpg" alt="Pura Folia - Canoas">
+                    <img src="images/Salao.jpg" alt="Pura Folia - Canoas">
                 </div>
                 <div class="text">
                     <h2 class="title">Salão de festas</h2>
@@ -54,15 +54,15 @@
         <section class="section" id="about">
             <div class="container grid">
                 <div class="image">
-                    <img src="jpg/DSC_8640.JPG" alt="Pura Folia - Canoas"/>
+                    <img src="images/DSC_8640.JPG" alt="Pura Folia - Canoas"/>
                 </div>
                 <div class="text">
                     <h2 class="title">Sobre nós</h2>
                     <p>
-                        Localizado na cidade de Canoas, tem amplo espaço para até 160 convidados, 
-						nosso espaço é todo térreo pensando na acessibilidade. Temos dois ambientes 
-						separados entre decoração/convidados e área dos brinquedos mas são integrados para que 
-						todos participem da festa, a área Kids possui brinquedos que atendem a TODAS as idades, 
+                        Localizado na cidade de Canoas, tem amplo espaço para até 160 convidados,
+						nosso espaço é todo térreo pensando na acessibilidade. Temos dois ambientes
+						separados entre decoração/convidados e área dos brinquedos mas são integrados para que
+						todos participem da festa, a área Kids possui brinquedos que atendem a TODAS as idades,
 						desde área baby, brinquedão, tombo legal à sinuca, ping-pong, etc.
                     </p>
                     <br />
@@ -111,10 +111,10 @@
                         Entre em contato com a Pura folia, estaremos felizes em lhe responder sobre cotações, mas também queremos tirar
                         suas dúvidas, ouvir suas críticas e sugestões.
                     </p>
-                    <form class="w50 contato">
-                        <input type="text" name="name" placeholder="Nome">
-                        <input type="email" name="email" placeholder="E-mail">
-                        <textarea name="message" placeholder="Mensagem"></textarea>
+                    <form action="/order" method="POST" class="w50 contato">
+                        <input type="text" name="name" id="name" placeholder="Nome">
+                        <input type="email" name="email" id="email" placeholder="E-mail">
+                        <textarea name="message" id="message" placeholder="Mensagem"></textarea>
                         <input type="submit" value="Enviar">
                     </form>
                 </div>
@@ -156,7 +156,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Main.js -->
-    <script src="JS/script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
