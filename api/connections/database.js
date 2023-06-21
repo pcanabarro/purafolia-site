@@ -10,10 +10,11 @@ class Mongo {
         deprecationErrors: true,
       }
     })
+    this.order = this.client.db('purafolia').collection('order')
   }
 
-  static async connect() {
+  async connect() {
     await this.client.connect()
   }
 }
-module.exports = Mongo
+module.exports = new Mongo()

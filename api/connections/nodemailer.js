@@ -8,7 +8,7 @@ const transporter = () => {
       user: process.env.SERVER_EMAIL,
       pass: process.env.SERVER_EMAIL_PASSWORD,
     }
-  });
+  })
 }
 
 module.exports = {

@@ -75,9 +75,9 @@ html(lang='pt-br')
             h2.title Entre em contato com a gente!
             p.subtitle Entre em contato com a Pura folia, estaremos felizes em lhe responder sobre cotações, mas também queremos tirar
             |  suas dúvidas, ouvir suas críticas e sugestões.
-            form.w50.contato(action='/order', method='POST')
-              input(type='text', name='name', id='name', placeholder='Nome')
-              input(type='email', name='email', id='email', placeholder='E-mail')
+            form.w50.contato(action='/order', method='GET' id="form")
+              input(type='text', name='customerName', id='customerName', placeholder='Nome')
+              input(type='email', name='customerEmail', id='customerEmail', placeholder='E-mail')
               textarea(name='message', id='message', placeholder='Mensagem')
               input(type='submit', value='Enviar')
           div.links

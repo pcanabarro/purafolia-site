@@ -3,16 +3,23 @@ const Router = require('./api/routes/router.js')
 const path = require('path')
 require('dotenv').config()
 
-const app = express()
+class App {
+	constructor() {
+		this.app = express()
+		this.port = process.env.SERVER_PORT
+		this.app.set('view engine', 'pug')
+		this.app.set("views", path.join(__dirname, "web"))
+		this.app.use(express.static(path.join(__dirname, 'web/public')))
+		this.app.use(express.json())
+		this.app.use(Router.getRouter())
+	}
 
-const PORT = process.env.SERVER_PORT
+	start() {
+    this.app.listen(this.port, () => {
+      console.log(`Server running on port ${this.port}`)
+    })
+  }
+}
 
-app.set("view engine", "pug")
-app.set("views", path.join(__dirname, "web"))
-
-app.use(express.static(path.join(__dirname, 'web/public')));
-app.use(Router.getRouter())
-
-app.listen(PORT, () =>
-    console.log('Server running on port', PORT)
-)
+const app = new App()
+app.start()
