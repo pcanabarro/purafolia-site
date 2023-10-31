@@ -1,5 +1,5 @@
 const express = require('express')
-const homeController = require('../controller/homeController.js')
+const pagesController = require('../controller/pagesController.js')
 const orderController = require('../controller/orderController.js')
 const emailController = require('../controller/emailController.js')
 
@@ -7,10 +7,22 @@ class Router {
     static getRouter () {
         const router = express.Router()
         router.use(express.json())
-        router.get('/home', homeController.getHome)
-        router.get('/email', emailController.sendEmail) // TODO
-        router.get('/getorders', orderController.getOrder)
-        router.get('/order', orderController.createOrder)
+
+        // Pages
+        router.get('/home', pagesController.getHome)
+        router.get('/contact', pagesController.getContact)
+        router.get('/simulate', pagesController.getSimulate)
+        router.get('/gallery', pagesController.getGallery)
+        router.get('/about', pagesController.getAbout)
+
+        // Orders
+        router.get('/order', orderController.getOrder)
+        router.post('/order', orderController.createOrder)
+
+        // Email
+        router.post('/email', emailController.sendEmail) // TODO
+
+        // Gallery TODO
 
         return router
     }
