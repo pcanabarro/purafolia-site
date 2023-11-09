@@ -1,7 +1,7 @@
-const express = require('express')
-const pagesController = require('../controller/pagesController.js')
-const orderController = require('../controller/orderController.js')
-const emailController = require('../controller/emailController.js')
+import express from 'express'
+import pagesController from '../controller/pagesController.js'
+import orderController from '../controller/orderController.js'
+import emailController from '../controller/emailController.js'
 
 class Router {
     static getRouter () {
@@ -10,10 +10,8 @@ class Router {
 
         // Pages
         router.get('/home', pagesController.getHome)
-        router.get('/contact', pagesController.getContact)
         router.get('/simulate', pagesController.getSimulate)
         router.get('/gallery', pagesController.getGallery)
-        router.get('/about', pagesController.getAbout)
 
         // Orders
         router.get('/order', orderController.getOrder)
@@ -28,4 +26,4 @@ class Router {
     }
 }
 
-module.exports = Router
+export default Router

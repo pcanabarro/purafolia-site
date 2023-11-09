@@ -1,5 +1,7 @@
-const { MongoClient, ServerApiVersion } = require('mongodb')
-require('dotenv').config()
+import { MongoClient, ServerApiVersion } from 'mongodb'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 class Mongo {
   constructor() {
@@ -17,4 +19,5 @@ class Mongo {
     await this.client.connect()
   }
 }
-module.exports = new Mongo()
+
+export default new Mongo()

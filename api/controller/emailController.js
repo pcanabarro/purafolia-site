@@ -1,5 +1,7 @@
-const transporter = require('../connections/nodemailer.js')
-require('dotenv').config({ path: '../../../.env' })
+import transporter from '../connections/nodemailer.js'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '../../../.env' })
 
 class EmailController {
   static getInfo(req, res) {
@@ -24,4 +26,4 @@ class EmailController {
   }
 }
 
-module.exports = EmailController
+export default EmailController

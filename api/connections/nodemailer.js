@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer')
-const constants = require('../utils/constants.js')
+import nodemailer from 'nodemailer'
+import constants from '../utils/constants.js'
 
 const transporter = () => {
   return nodemailer.createTransport({
@@ -11,6 +11,4 @@ const transporter = () => {
   })
 }
 
-module.exports = {
-  transporter
-}
+export default transporter

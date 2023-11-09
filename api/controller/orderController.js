@@ -1,4 +1,4 @@
-const database = require('../connections/database.js')
+import database from '../connections/database.js'
 
 class OrderController {
 
@@ -42,4 +42,4 @@ class OrderController {
   }
 }
 
-module.exports = OrderController
+export default OrderController

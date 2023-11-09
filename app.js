@@ -1,15 +1,17 @@
-const express = require('express')
-const Router = require('./api/routes/router.js')
-const path = require('path')
-require('dotenv').config()
+import express from 'express'
+import Router from './api/routes/router.js'
+import path from 'path'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 class App {
 	constructor() {
 		this.app = express()
 		this.port = process.env.SERVER_PORT
 		this.app.set('view engine', 'pug')
-		this.app.set("views", path.join(__dirname, "web"))
-		this.app.use(express.static(path.join(__dirname, 'web/public')))
+		// this.app.set("views", path.join(__dirname, "web"))
+		// this.app.use(express.static(path.join(__dirname, 'web/public')))
 		this.app.use(express.json())
 		this.app.use(Router.getRouter())
 	}
