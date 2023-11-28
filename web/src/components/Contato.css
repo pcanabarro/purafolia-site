@@ -1,0 +1,316 @@
+.social-icons {
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container_contato_all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6%;
+    font-family:'Poppins', sans-serif;
+}
+
+.container_contato_all h1 {
+    font-size: 5rem;
+}
+
+.container_contato_all p {
+    font-size: 1.5rem;
+    padding-bottom: 3%;
+}
+
+
+.logo {
+    background-color: #76D74B;
+    padding: 50px 30px;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: white;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    box-shadow: -5px 5px 0px rgba(233, 132, 72, 1), -10px 10px 0px rgba(255, 102, 196, 1), -15px 15px 0px rgba(140, 82, 255, 1), -20px 20px 0px rgba(33, 33, 33, 0.1);
+}
+
+.container_contato_all i {
+    font-size: 3rem;
+}
+
+.logo:hover {
+    background-color: rgba(233, 132, 72, 1);
+    box-shadow: -10px 10px 0px rgba(255, 102, 196, 1), -20px 20px 0px rgba(140, 82, 255, 1), -30px 30px 0px rgba(118, 215, 75, 1), -40px 40px 0px rgba(33, 33, 33, 0.1);
+    transition: 0.5s;
+}
+
+.container_contato_all span {
+    color: #E98448;
+}
+
+.container_contato_all p {
+    color: #8C52FF;
+    font-weight: bold;
+}
+
+/* @media (max-width: 1450px) {
+    .container_about_all {
+        margin-bottom: 5%;
+    }
+    .container_about {
+        padding-top: 5%;
+    }
+    .container_card_left {
+        width: 32%;
+    }
+    .container_card_middle {
+        width: 32%;
+    }
+    .container_card_right {
+        width: 32%;
+    }
+}
+@media (max-width: 1200px) {
+   .container_about p {
+    font-size: 1rem;
+    }
+    .container_card_right {
+        width: 32%;
+        height: 500px;
+    }
+    .container_card_middle {
+        width: 32%;
+        height: 500px;
+    }
+    .container_card_left {
+        width: 32%;
+        height: 500px;
+    }
+    .container_about_img {
+        margin-top: 5%;
+    }
+    .container_contato_all h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container_about {
+        padding: 50px 50px;
+    }
+    .container_about_all {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .container_cabecalho_all h1 {
+        font-size: 8rem;
+    }
+    .container_card_all h3{
+        font-size: 3rem;
+        padding-bottom: 15px;
+    }
+    .container_card_right {
+        width: 90%;
+        height: 400px;
+        margin: 10px 0px;
+    }
+    .container_card_middle {
+        width: 90%;
+        height: 400px;
+        margin: 10px 0px;
+    }
+    .container_card_left {
+        width: 90%;
+        height: 400px;
+        margin: 10px 0px;
+    }
+    .container_card_all p {
+        font-size: 1.2rem;
+    }
+    .container_about_all {
+        flex-direction: column;
+        height: max-content;
+    }
+    .container_about {
+        width: 100%;
+    }
+    .container_about_all img {
+        display: none;
+    }
+    .container_contato_all h1{
+        font-size: 2.5rem;
+    }
+    .container_contato_all p {
+        font-size: 1.2rem;
+    }
+    .container_botoes {
+        padding-top: 8%;
+    }
+    header ul li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+    .container_card_all {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 560px) {
+    header.rolagem {
+        padding: 0px 10px;
+    }
+
+    .container_cabecalho_all h1 {
+        font-size: 6rem;
+    }
+    .container_card_all {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container_card_all p {
+        font-size: 1.1rem;
+    }
+    .container_contato_all h1 {
+        font-size: 2rem;
+    }
+    .container_contato_all p {
+        font-size: 1rem;
+    }
+    .logo {
+        width: 80%;
+        font-size: 1.75rem;
+        margin-bottom: 5%;
+    }
+    .logo i {
+        font-size: 2rem;
+    }
+    header ul li {
+        display: inline-block;
+        margin: 0 7px;
+    }
+    header {
+        padding: 50px 0px;
+    }
+}
+@media (max-width: 450px) {
+    .container_cabecalho_all h1 {
+        font-size: 5rem;
+    }
+    .container_cabecalho_all h3 {
+        font-size: 2.5rem;
+    }
+    .container_card_left {
+        height: 450px;
+    }
+    .container_card_right {
+        height: 450px;
+    }
+    .container_card_middle {
+        height: 450px;
+    }
+    .container_contato_all h1 {
+        font-size: 1.6rem;
+    }
+    .container_contato_all p {
+        font-size: 0.8rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+        padding: 20px 10px;
+        align-items: center;
+    }
+    .container_header_all a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .container_card_left {
+        height: 500px;
+    }
+    .container_card_middle {
+        height: 500px;
+    }
+    .container_card_right {
+        height: 500px;
+    }
+    .container_contato_all h1 {
+        font-size: 1.2rem;
+    }
+    .container_contato_all p {
+        font-size: 0.7rem;
+    }
+    .container_header_all a {
+        font-size: 0.6rem;
+    }
+    .container_card_all h3 {
+        font-size: 2.2rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .container_cabecalho_all h1 {
+        font-size: 4rem;
+    }
+    .container_cabecalho_all h3 {
+        font-size: 2rem;
+    }
+    .container_about_all h1 {
+        font-size: 2.2rem;
+    }
+    .container_about {
+        padding: 10px;
+    }
+    header button {
+        font-size: 0.7rem;
+    }
+    .logo {
+        box-shadow: -5px 5px 0px rgba(233, 132, 72, 1), -10px 10px 0px rgba(255, 102, 196, 1), -15px 15px 0px rgba(140, 82, 255, 1), -20px 20px 0px rgba(33, 33, 33, 0.1);
+    }
+}
+
+@media (max-width: 315px) {
+    .container_contato_all p {
+        font-size: 0.6rem;
+    }
+    .logo {
+        font-size: 1rem;
+        height: 70px;
+    }
+    .container_card_all p {
+        font-size: 1rem;
+    }
+    .container_header_all a {
+        font-size: 0.6rem;
+    }
+    header button {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+    .container_botoes {
+        padding: 30px 10px;
+    }
+    .container_about_all h1 {
+        font-size: 2rem;
+    }
+    .container_cabecalho_all h1 {
+        font-size: 3.5rem;
+    }
+    .container_cabecalho_all h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .container_header_all a {
+        font-size: 0.5rem;
+    }
+    .container_contato_all h1 {
+        font-size: 1rem;
+    }
+    .container_contato_all p {
+        font-size: 0.5rem;
+    }
+} */

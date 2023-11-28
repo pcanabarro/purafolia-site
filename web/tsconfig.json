@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "CommonJS",
+      "strict": true,
+      "jsx": "react",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "outDir": "./build",
+      "baseUrl": "src",
+      "paths": {
+        "*": ["src/*"]
+      }
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules"]
+  }
+  
