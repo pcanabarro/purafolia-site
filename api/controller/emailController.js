@@ -1,9 +1,19 @@
-const transporter = require('../connections/nodemailer.js')
-require('dotenv').config({ path: '../../../.env' })
+import transporter from '../connections/nodemailer.js'
+import database from '../connections/database.js'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '../../../.env' })
 
 class EmailController {
-  static getInfo(req, res) {
-    res.render('index')
+  static async getEmails(req, res) {
+    try {
+      await database.connect()
+      const allEmails = database.email.find().toArray()
+
+      res.status(200).json({ message: allEmails })
+    } catch (error) {
+      res.status(500).json({ msg: 'Erro na visualizacao dos emails', error: error })
+    }
   }
 
   static async sendEmail(req, res) {
@@ -16,7 +26,13 @@ class EmailController {
         text: message
       }
 
-      await transporter.sendMail(mailOptions)
+      const promises = [
+        database.email.insertOne(mailOptions),
+        transporter.sendMail(mailOptions)
+      ]
+
+      await Promise.all(promises)
+
       res.status(200).json({ message: 'Email enviado com sucesso!' })
     } catch (error) {
       res.status(500).json({ msg: 'Erro no envio do email', error: error })
@@ -24,4 +40,4 @@ class EmailController {
   }
 }
 
-module.exports = EmailController
+export default EmailController

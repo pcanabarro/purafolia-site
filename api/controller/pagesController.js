@@ -20,4 +20,4 @@ class PagesController {
     }
 }
 
-module.exports = PagesController
+export default PagesController

@@ -1,9 +1,8 @@
-const database = require('../connections/database.js')
+import database from '../connections/database.js'
 
 class OrderController {
 
   static async createOrder(req, res) {
-    console.log(req)
     const { customerName, customerEmail, message } = req.query
     const newOrder = {
       'customerName': customerName,
@@ -14,10 +13,10 @@ class OrderController {
     try {
       await database.connect()
       await database.order.insertOne(newOrder)
-      console.log('Data Inserted')
-      res.status(201).json({ data: 'Order created', newOrder })
-    } catch (err) {
-      res.status(500).json({ data: 'Something went wrong', err })
+
+      res.status(201).json({ data: 'Ordem Criada', newOrder })
+    } catch (error) {
+      res.status(500).json({ data: 'Erro na criação', err })
     }
   }
 
@@ -25,21 +24,30 @@ class OrderController {
     const ordersToDisplay = []
     try {
       await database.connect()
+
       const allOrders = await database.order.find().toArray()
       allOrders.forEach(item => {
         ordersToDisplay.push(item)
       })
+
       res.status(201).json({ data: ordersToDisplay })
-    } catch (err) {
-      res.status(500).json({ data: 'Something went wrong', err })
+    } catch (error) {
+      res.status(500).json({ data: 'Erro ao visualizar ordens', err })
     }
   }
 
   static async deleteOrder(req, res) {
-    // add method to delete from database
-    const { orderId } = req.body
-    res.status(200).json({ msg: `Order ${orderId} deleted` })
+    try {
+      const { orderId } = req.body
+
+      await database.connect()
+
+      await database.order.deleteOne(orderId)
+      res.status(200).json({ msg: `Ordem ${orderId} deletada` })
+    } catch (error) {
+      res.status(500).json({ data: 'Erro na deleção', error })
+    }
   }
 }
 
-module.exports = OrderController
+export default OrderController

@@ -1,5 +1,7 @@
-const { MongoClient, ServerApiVersion } = require('mongodb')
-require('dotenv').config()
+import { MongoClient, ServerApiVersion } from 'mongodb'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 class Mongo {
   constructor() {
@@ -10,11 +12,21 @@ class Mongo {
         deprecationErrors: true,
       }
     })
-    this.order = this.client.db('purafolia').collection('order')
+    this.db = this.client.db('purafolia')
+    this.order = this.db.collection('order')
+    this.gallery = this.db.collection('gallery')
+    this.email = this.db.collection('email')
   }
 
   async connect() {
     await this.client.connect()
   }
+
+  async populate() {
+    await this.db.createCollection('order')
+    await this.db.createCollection('gallery')
+    await this.db.createCollection('email')
+  }
 }
-module.exports = new Mongo()
+
+export default new Mongo()
