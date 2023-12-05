@@ -6,9 +6,13 @@ dotenv.config({ path: '../../../.env' })
 
 class EmailController {
   static async getEmails(req, res) {
+    const emailsToDisplay = []
     try {
       await database.connect()
-      const allEmails = database.email.find().toArray()
+      const allEmails = await database.email.find().toArray()
+      allEmails.forEach(item => {
+        emailsToDisplay.push(item)
+      })
 
       res.status(200).json({ message: allEmails })
     } catch (error) {
@@ -18,7 +22,7 @@ class EmailController {
 
   static async sendEmail(req, res) {
     try {
-      const { customerName, customerEmail, message } = req.query
+      const { customerName, customerEmail, message } = req.body
       const mailOptions = {
         from: process.env.SERVER_EMAIL,
         to: process.env.SERVER_EMAIL,
@@ -33,9 +37,20 @@ class EmailController {
 
       await Promise.all(promises)
 
-      res.status(200).json({ message: 'Email enviado com sucesso!' })
+      res.status(201).json({ msg: 'Email Enviado!'})
     } catch (error) {
-      res.status(500).json({ msg: 'Erro no envio do email', error: error })
+      res.status(500).json({ msg: 'Erro no envio do email!', error: error })
+    }
+  }
+
+  static async deleteEmail(req, res) {
+    try {
+      const { emailId } = req.params
+      await database.email.deleteOne(emailId)
+
+      res.status(200).json({ msg: 'Email Deletado!'})
+    } catch (error) {
+      res.status(500).json({ msg: 'Erro na exclusão do email!', error: error })
     }
   }
 }
