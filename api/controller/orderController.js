@@ -19,12 +19,13 @@ class OrderController {
   }
 
   static async createOrder(req, res, next) {
-    const { customerName, customerEmail, message } = req.body
+    const { customerName, customerEmail, phone, type, year } = req.body
     const newOrder = {
       'customerName': customerName,
       'customerEmail': customerEmail,
-      'message': message
+      'message': `${customerName}, está solicitando um orcamento para uma festa ${type} no ano de ${year}. Informações de contato: Telefone ${phone}`
     }
+    console.log(newOrder)
 
     try {
       await database.connect()

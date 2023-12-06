@@ -1,6 +1,7 @@
 import express from 'express'
 import Router from './api/routes/router.js'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -9,6 +10,7 @@ class App {
 		this.app = express()
 		this.port = process.env.SERVER_PORT
 		this.app.use(express.json())
+		this.app.use(cors())
 		this.app.use(Router.getRouter())
 	}
 
