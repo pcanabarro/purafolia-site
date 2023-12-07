@@ -22,9 +22,10 @@ class EmailController {
 
   static async sendEmail(req, res) {
     try {
-      const { customerName, customerEmail, message } = req.body
+      const { customerEmail, customerName, phone, type, year } = req.body
+      const message = `${customerName}, esta solicitando um orçamento para o ano de ${year}, uma festa ${type}. Contato: ${phone}`
       const mailOptions = {
-        from: process.env.SERVER_EMAIL,
+        from: customerEmail,
         to: process.env.SERVER_EMAIL,
         subject: `Orçamento ${customerName}, ${customerEmail}`,
         text: message
@@ -32,7 +33,7 @@ class EmailController {
 
       const promises = [
         database.email.insertOne(mailOptions),
-        transporter.sendMail(mailOptions)
+        // transporter.sendMail(mailOptions)
       ]
 
       await Promise.all(promises)
@@ -45,7 +46,7 @@ class EmailController {
 
   static async deleteEmail(req, res) {
     try {
-      const { emailId } = req.params
+      const { emailId } = req.body
       await database.email.deleteOne(emailId)
 
       res.status(200).json({ msg: 'Email Deletado!'})

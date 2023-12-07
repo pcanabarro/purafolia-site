@@ -40,7 +40,7 @@ class OrderController {
 
   static async deleteOrder(req, res) {
     try {
-      const { orderId } = req.params
+      const { orderId } = req.body
 
       await database.connect()
 
