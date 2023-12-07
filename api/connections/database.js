@@ -14,7 +14,6 @@ class Mongo {
     })
     this.db = this.client.db('purafolia')
     this.order = this.db.collection('order')
-    this.gallery = this.db.collection('gallery')
     this.email = this.db.collection('email')
   }
 
@@ -24,7 +23,6 @@ class Mongo {
 
   async populate() {
     await this.db.createCollection('order')
-    await this.db.createCollection('gallery')
     await this.db.createCollection('email')
   }
 }
