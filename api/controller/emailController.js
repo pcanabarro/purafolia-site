@@ -47,7 +47,7 @@ class EmailController {
   static async deleteEmail(req, res) {
     try {
       const { emailId } = req.body
-      await database.email.deleteOne(emailId)
+      await database.email.deleteOne({ _id: emailId })
 
       res.status(200).json({ msg: 'Email Deletado!'})
     } catch (error) {

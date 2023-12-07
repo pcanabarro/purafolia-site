@@ -44,7 +44,7 @@ class OrderController {
 
       await database.connect()
 
-      await database.order.deleteOne(orderId)
+      await database.order.deleteOne({ _id: orderId })
       res.status(200).json({ msg: `Ordem ${orderId} deletada` })
     } catch (error) {
       res.status(500).json({ data: 'Erro na deleção', error })
