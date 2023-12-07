@@ -10,11 +10,11 @@ class Router {
         // Orders
         router.get('/order', orderController.getOrder)
         router.post('/order', orderController.createOrder, emailController.sendEmail)
-        router.delete('/order/:orderId', orderController.deleteOrder)
+        router.delete('/order', orderController.deleteOrder)
 
         // Email
         router.get('/email', emailController.getEmails)
-        router.delete('/email/:emaiId', emailController.deleteEmail)
+        router.delete('/email', emailController.deleteEmail)
 
         return router
     }
