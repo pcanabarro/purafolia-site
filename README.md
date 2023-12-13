@@ -4,7 +4,7 @@ Introduction: This project is for a website that will be created as part of a co
 
 Technologies Used:
 
-HTML5, CSS3, and JavaScript for front-end development. Node.js and Express.js for back-end development. MongoDB for the database.
+HTML5, CSS3, and React for front-end development (https://github.com/lemosflp/Pura-Folia-SiteReactJS). Node.js and Express.js for back-end development. MongoDB for the database.
 
 Website Features:
 
